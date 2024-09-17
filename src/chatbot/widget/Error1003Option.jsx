@@ -8,8 +8,11 @@ const Error1003Option = (props) => {
   };
 
   return (
-    <div>
-      <button onClick={() => appealClickHandle("Request an Appeal")}>
+    <div className="text-zoomchatblue ml-11 font-extrabold text-[14px]">
+      <button
+        className="inline-block border border-zoomchatblue rounded-3xl px-4 py-1.5 m-1 hover:bg-zoomchatblue hover:text-white hover:cursor-pointer"
+        onClick={() => appealClickHandle("Request an Appeal")}
+      >
         Request an Appeal
       </button>
     </div>

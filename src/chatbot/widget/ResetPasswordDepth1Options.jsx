@@ -9,14 +9,25 @@ const ResetPasswordDepth1Options = (props) => {
   };
 
   return (
-    <div>
-      <button onClick={() => handleResetPassword("Reset Password")}>
+    <div className="text-zoomchatblue ml-11 font-extrabold text-[14px]">
+      <button
+        className="inline-block border border-zoomchatblue rounded-3xl px-4 py-1.5 m-1 hover:bg-zoomchatblue hover:text-white hover:cursor-pointer"
+        onClick={() => handleResetPassword("Reset Password")}
+      >
         Reset Password
       </button>
-      <button title="NOT IMPLEMENTED" onClick={() => alert("NOT IMPLEMENTED")}>
+      <button
+        className="inline-block border border-zoomchatblue rounded-3xl px-4 py-1.5 m-1 hover:bg-zoomchatblue hover:text-white hover:cursor-pointer"
+        title="NOT IMPLEMENTED"
+        onClick={() => alert("NOT IMPLEMENTED")}
+      >
         Issues after resetting my password
       </button>
-      <button title="NOT IMPLEMENTED" onClick={() => alert("NOT IMPLEMENTED")}>
+      <button
+        className="inline-block border border-zoomchatblue rounded-3xl px-4 py-1.5 m-1 hover:bg-zoomchatblue hover:text-white hover:cursor-pointer"
+        title="NOT IMPLEMENTED"
+        onClick={() => alert("NOT IMPLEMENTED")}
+      >
         Other SSO related issues
       </button>
     </div>

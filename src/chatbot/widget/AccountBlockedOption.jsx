@@ -5,8 +5,11 @@ const AccountBlockedOption = (props) => {
   };
 
   return (
-    <div>
-      <button onClick={resetPasswordHandle("Reset Password")}>
+    <div className="text-zoomchatblue ml-11 font-extrabold text-[14px]">
+      <button
+        className="inline-block border border-zoomchatblue rounded-3xl px-4 py-1.5 m-1 hover:bg-zoomchatblue hover:text-white hover:cursor-pointer"
+        onClick={resetPasswordHandle("Reset Password")}
+      >
         Reset Password
       </button>
     </div>

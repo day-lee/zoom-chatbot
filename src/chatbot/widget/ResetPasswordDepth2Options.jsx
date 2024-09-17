@@ -4,12 +4,25 @@ const ResetPasswordDepth2Options = (props) => {
   };
 
   return (
-    <div>
-      <button onClick={() => handleYes("Yes")}>Yes</button>
-      <button title="NOT IMPLEMENTED" onClick={() => alert("NOT IMPLEMENTED")}>
+    <div className="text-zoomchatblue ml-11 font-extrabold text-[14px]">
+      <button
+        className="inline-block border border-zoomchatblue rounded-3xl px-4 py-1.5 m-1 hover:bg-zoomchatblue hover:text-white hover:cursor-pointer"
+        onClick={() => handleYes("Yes")}
+      >
+        Yes
+      </button>
+      <button
+        className="inline-block border border-zoomchatblue rounded-3xl px-4 py-1.5 m-1 hover:bg-zoomchatblue hover:text-white hover:cursor-pointer"
+        title="NOT IMPLEMENTED"
+        onClick={() => alert("NOT IMPLEMENTED")}
+      >
         No
       </button>
-      <button title="NOT IMPLEMENTED" onClick={() => alert("NOT IMPLEMENTED")}>
+      <button
+        className="inline-block border border-zoomchatblue rounded-3xl px-4 py-1.5 m-1 hover:bg-zoomchatblue hover:text-white hover:cursor-pointer"
+        title="NOT IMPLEMENTED"
+        onClick={() => alert("NOT IMPLEMENTED")}
+      >
         Go back to previous menu
       </button>
     </div>

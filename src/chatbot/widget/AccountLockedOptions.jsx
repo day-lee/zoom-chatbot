@@ -15,12 +15,23 @@ const AccountLockedOptions = (props) => {
   };
 
   return (
-    <div>
-      <button onClick={() => handleError1003("Error 1003")}>Error 1003</button>
-      <button onClick={() => handleAccountDisabled("Account is Disabled")}>
+    <div className="text-zoomchatblue ml-11 font-extrabold text-[14px]">
+      <button
+        className="inline-block border border-zoomchatblue rounded-3xl px-4 py-1.5 m-1 hover:bg-zoomchatblue hover:text-white hover:cursor-pointer"
+        onClick={() => handleError1003("Error 1003")}
+      >
+        Error 1003
+      </button>
+      <button
+        className="inline-block border border-zoomchatblue rounded-3xl px-4 py-1.5 m-1 hover:bg-zoomchatblue hover:text-white hover:cursor-pointer"
+        onClick={() => handleAccountDisabled("Account is Disabled")}
+      >
         Account is Disabled
       </button>
-      <button onClick={() => handleAccountBlocked("Account is Blocked")}>
+      <button
+        className="inline-block border border-zoomchatblue rounded-3xl px-4 py-1.5 m-1 hover:bg-zoomchatblue hover:text-white hover:cursor-pointer"
+        onClick={() => handleAccountBlocked("Account is Blocked")}
+      >
         Account is Blocked
       </button>
     </div>

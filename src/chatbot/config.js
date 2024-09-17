@@ -1,5 +1,6 @@
 import { createChatBotMessage } from "react-chatbot-kit";
 import DogPicture from "./DogPicture";
+import Header from "./Header.jsx";
 import AccountBlockedOption from "./widget/AccountBlockedOption";
 import AccountDisabledOption from "./widget/AccountDisabledOption";
 import AccountLockedOptions from "./widget/AccountLockedOptions";
@@ -66,27 +67,42 @@ const config = {
       widgetName: "accountBlockedOption",
       widgetFunc: (props) => <AccountBlockedOption {...props} />,
     },
-    // {
-    //   widgetName: "reactivateAccountOption",
-    //   widgetFunc: (props) => <ReactivateAccountOption {...props} />,
-    // },
   ],
+  // Defines an object of custom components that will replace the stock chatbot components.
   customComponents: {
-    header: () => (
-      <div
-        style={{ backgroundColor: "red", padding: "5px", borderRadius: "3px" }}
-      >
-        This is the header
-      </div>
-    ),
+    // Replaces the default header
+    // header: (props) => (
+    //   <div
+    //     style={{ backgroundColor: "red", padding: "5px", borderRadius: "3px" }}
+    //   >
+    //     This is the header
+    //   </div>
+    // ),
+    header: (props) => <Header {...props} />,
     // // Replaces the default bot avatar
-    // botAvatar: (props) => <MyAvatar {...props} />,
+    // botAvatar: (props) => <FlightBotAvatar {...props} />,
     // // Replaces the default bot chat message container
-    // botChatMessage: (props) => <MyCustomChatMessage {...props} />,
+    //botChatMessage: (props) => <CustomChatMessage {...props} />,
     // // Replaces the default user icon
-    // userAvatar: (props) => <MyCustomAvatar {...props} />,
+    // userAvatar: (props) => <MyUserAvatar {...props} />,
     // // Replaces the default user chat message
-    // userChatMessage: (props) => <MyCustomUserChatMessage {...props} />
+    // userChatMessage: (props) => <MyUserChatMessage {...props} />,
+  },
+  // Register your own set of components as custom message types
+  // customMessages: {
+  //   custom: (props) => <MyCustomMessage {...props} />,
+  // },
+  // Defines an object of custom styles if you want to override styles
+  customStyles: {
+    // Overrides the chatbot message styles
+    botMessageBox: {
+      //backgroundColor: "#376B7E",
+      width: "349px",
+    },
+    // Overrides the chat button styles
+    chatButton: {
+      backgroundColor: "#5ccc9d",
+    },
   },
 };
 
