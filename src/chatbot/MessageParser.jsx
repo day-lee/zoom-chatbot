@@ -1,17 +1,16 @@
 import React from "react";
 
 const MessageParser = ({ children, actions }) => {
-  const parse = (message) => {
+  const parse = (rawMessage) => {
+    let message = rawMessage.toLowerCase();
     if (message.includes("reset")) {
-      actions.handleResetPassword();
-    }
-    // how to add multiple keyword?
-    if (message.includes("lock")) {
+      actions.handleResetPasswordDepth1();
+    } else if (message.includes("lock")) {
       actions.handleAccountLocked();
-    }
-
-    if (message.includes("dog")) {
+    } else if (message.includes("dog")) {
       actions.handleDog();
+    } else {
+      actions.handleNotFindAnswer();
     }
   };
 

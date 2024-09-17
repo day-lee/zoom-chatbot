@@ -9,6 +9,17 @@ const ActionProvider = ({ createChatBotMessage, setState, children }) => {
       messages: [...prev.messages, userMessage],
     }));
   };
+
+  const handleNotFindAnswer = () => {
+    const firstBotMessage = createChatBotMessage(
+      "Hmm, I couldn't find an answer to that. Can you try asking it a different way?"
+    );
+    setState((prev) => ({
+      ...prev,
+      messages: [...prev.messages, firstBotMessage],
+    }));
+  };
+
   const handleAccountLocked = () => {
     const firstBotMessage = createChatBotMessage(
       "Your Zoom account will be inaccessible if it is disabled, deactivated, or locked. I can help you recover your account."
@@ -183,6 +194,7 @@ const ActionProvider = ({ createChatBotMessage, setState, children }) => {
         return React.cloneElement(child, {
           actions: {
             handleButtonClickResponse,
+            handleNotFindAnswer,
             handleAccountLocked,
             handleAccountAccessIssue,
             handleError1003,
