@@ -1,9 +1,11 @@
 import React from "react";
+const passwordResetWords = ["reset", "password"];
 
 const MessageParser = ({ children, actions }) => {
   const parse = (rawMessage) => {
     let message = rawMessage.toLowerCase();
-    if (message.includes("reset")) {
+
+    if (passwordResetWords.some((word) => message.includes(word))) {
       actions.handleResetPasswordDepth1();
     } else if (message.includes("lock")) {
       actions.handleAccountLocked();
