@@ -1,27 +1,34 @@
-import { createChatBotMessage } from "react-chatbot-kit";
+import { createChatBotMessage, createCustomMessage } from "react-chatbot-kit";
+
 import DogPicture from "./DogPicture";
+import FlightBotAvatar from "./FlightBotAvatar";
 import Header from "./Header.jsx";
+import MyUserAvatar from "./MyUserAvatar";
 import AccountBlockedOption from "./widget/AccountBlockedOption";
 import AccountDisabledOption from "./widget/AccountDisabledOption";
 import AccountLockedOptions from "./widget/AccountLockedOptions";
 import BlockedResetPasswordOption from "./widget/BlockedResetPasswordOption";
+import {
+  ReactivateAccountCustomMsg,
+  RequestAppealCustomMsg,
+  ResetPassword2CustomMsg,
+  ResetPassword2NoteCustomMsg,
+  ResetPassword3CustomMsg,
+  ResetPasswordCustomMsg,
+} from "./widget/CustomMessages";
 import Error1030Option from "./widget/Error1003Option";
 import InitialButtonOptions from "./widget/InitialButtonOptions";
+import {
+  InitialCustomMsg1,
+  InitialCustomMsg2,
+} from "./widget/InitialCustomMessages";
 import ResetPasswordDepth1Options from "./widget/ResetPasswordDepth1Options";
 import ResetPasswordDepth2Options from "./widget/ResetPasswordDepth2Options";
 
 const config = {
   initialMessages: [
-    createChatBotMessage(
-      `Zoom may retain your chat transcript to use for quality, training, and analysis purposes.`
-    ),
-    createChatBotMessage(
-      "Hi, I'm Zoe 🤖. Zoom's Virtual Agent for technical Support and Billing.",
-      {
-        withAvatar: false,
-        delay: 100,
-      }
-    ),
+    createCustomMessage("test", "initialCustomMsg1"),
+    createCustomMessage("test", "initialCustomMsg2"),
     createChatBotMessage(
       "It looks like you need help accessing your Zoom account. I'm here to help! How can I assist you?",
       {
@@ -68,41 +75,24 @@ const config = {
       widgetFunc: (props) => <AccountBlockedOption {...props} />,
     },
   ],
-  // Defines an object of custom components that will replace the stock chatbot components.
   customComponents: {
-    // Replaces the default header
-    // header: (props) => (
-    //   <div
-    //     style={{ backgroundColor: "red", padding: "5px", borderRadius: "3px" }}
-    //   >
-    //     This is the header
-    //   </div>
-    // ),
     header: (props) => <Header {...props} />,
-    // // Replaces the default bot avatar
-    // botAvatar: (props) => <FlightBotAvatar {...props} />,
-    // // Replaces the default bot chat message container
-    //botChatMessage: (props) => <CustomChatMessage {...props} />,
-    // // Replaces the default user icon
-    // userAvatar: (props) => <MyUserAvatar {...props} />,
-    // // Replaces the default user chat message
-    // userChatMessage: (props) => <MyUserChatMessage {...props} />,
+    botAvatar: (props) => <FlightBotAvatar {...props} />,
+    userAvatar: (props) => <MyUserAvatar {...props} />,
   },
-  // Register your own set of components as custom message types
-  // customMessages: {
-  //   custom: (props) => <MyCustomMessage {...props} />,
-  // },
-  // Defines an object of custom styles if you want to override styles
-  customStyles: {
-    // Overrides the chatbot message styles
-    botMessageBox: {
-      //backgroundColor: "#376B7E",
-      width: "349px",
-    },
-    // Overrides the chat button styles
-    chatButton: {
-      backgroundColor: "#5ccc9d",
-    },
+  customMessages: {
+    initialCustomMsg1: (props) => <InitialCustomMsg1 {...props} />,
+    initialCustomMsg2: (props) => <InitialCustomMsg2 {...props} />,
+    requestAppealCustommsg: (props) => <RequestAppealCustomMsg {...props} />,
+    reactivateAccountCustomMsg: (props) => (
+      <ReactivateAccountCustomMsg {...props} />
+    ),
+    resetPasswordCustomMsg: (props) => <ResetPasswordCustomMsg {...props} />,
+    resetPassword2CustomMsg: (props) => <ResetPassword2CustomMsg {...props} />,
+    resetPassword2NoteCustomMsg: (props) => (
+      <ResetPassword2NoteCustomMsg {...props} />
+    ),
+    resetPassword3CustomMsg: (props) => <ResetPassword3CustomMsg {...props} />,
   },
 };
 

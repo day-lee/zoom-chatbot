@@ -1,5 +1,5 @@
 import React from "react";
-import { createClientMessage } from "react-chatbot-kit";
+import { createClientMessage, createCustomMessage } from "react-chatbot-kit";
 
 const ActionProvider = ({ createChatBotMessage, setState, children }) => {
   const handleButtonClickResponse = (message) => {
@@ -55,9 +55,12 @@ const ActionProvider = ({ createChatBotMessage, setState, children }) => {
   };
 
   const handleError1003 = () => {
-    const firstBotMessage = createChatBotMessage(
-      "Accounts that don't follow Zoom's Terms of Service or Acceptable Use Guidelines may be disabled without warning. Click Request an Appeal below to submit an appeal to Zoom's Trust and Safety team.",
-      { widget: "error1003Option" }
+    const firstBotMessage = createCustomMessage(
+      "value",
+      "requestAppealCustommsg",
+      {
+        widget: "error1003Option",
+      }
     );
     setState((prev) => ({
       ...prev,
@@ -76,11 +79,13 @@ const ActionProvider = ({ createChatBotMessage, setState, children }) => {
   };
 
   const handleResetPasswordDepth1 = () => {
-    const firstBotMessage = createChatBotMessage(
-      "Click the Reset Password button below to start resetting your password."
+    const firstBotMessage = createCustomMessage(
+      "value",
+      "resetPassword2CustomMsg"
     );
-    const secondBotMessage = createChatBotMessage(
-      "Note: For SSO accounts please contact your IT admin for assistance.",
+    const secondBotMessage = createCustomMessage(
+      "value",
+      "resetPassword2NoteCustomMsg",
       {
         widget: "resetPasswordDepth1Options",
       }
@@ -110,8 +115,9 @@ const ActionProvider = ({ createChatBotMessage, setState, children }) => {
     const secondBotMessage = createChatBotMessage(
       "You will need to contact your account owner or admins directly to reactivate your account."
     );
-    const thirdBotMessage = createChatBotMessage(
-      "Click Reactivate Account below ⬇️ for instructions to provide to your account owner or admins.",
+    const thirdBotMessage = createCustomMessage(
+      "value",
+      "reactivateAccountCustomMsg",
       {
         widget: "accountDisabledOption",
       }
@@ -152,8 +158,9 @@ const ActionProvider = ({ createChatBotMessage, setState, children }) => {
     const firstBotMessage = createChatBotMessage(
       "When multiple sign-in attempts to your Zoom account have failed because of incorrect credentials, your Zoom account will be blocked and you will be locked out."
     );
-    const secondBotMessage = createChatBotMessage(
-      "Please wait 30 minutes and attempt to sign in to your Zoom account again. If you are not sure what your password is, select Reset Password below ⬇️",
+    const secondBotMessage = createCustomMessage(
+      "value",
+      "resetPasswordCustomMsg",
       {
         widget: "blockedResetPasswordOption",
       }
@@ -166,17 +173,9 @@ const ActionProvider = ({ createChatBotMessage, setState, children }) => {
   };
 
   const handleResetPasswordDepth2 = () => {
-    const firstBotMessage = createChatBotMessage(
-      `On the Reset Password page, follow these instructions:
-
-      Note: To continue following instructions here, select the Help icon on the Reset Password page.
-      
-      
-      Enter your registered email address in the Email Address field
-      Click the I'm not a robot checkbox to complete the captcha verification
-      Click Send
-      
-      Check your email inbox and spam folders. Did you receive a verification email?`,
+    const firstBotMessage = createCustomMessage(
+      "value",
+      "resetPassword3CustomMsg",
       {
         widget: "resetPasswordDepth2Options",
       }

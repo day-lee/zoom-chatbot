@@ -1,7 +1,5 @@
-const CustomChatMessage = (props) => {
-    return (
-        
-    )
-};
+// const CustomChatMessage = (props) => {
+//   return <div>hi</div>;
+// };
 
-export default CustomChatMessage;
+// export default CustomChatMessage;

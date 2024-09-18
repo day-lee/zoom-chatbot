@@ -9,7 +9,7 @@ const InitialButtonOptions = (props) => {
   };
 
   return (
-    <div className="text-zoomchatblue ml-11 font-extrabold text-[14px]">
+    <div className="text-zoomchatblue ml-12 font-extrabold text-[14px]">
       <button
         aria-label="My Account is Locked"
         title="My Account is Locked"
@@ -29,18 +29,14 @@ const InitialButtonOptions = (props) => {
       <button
         aria-label="Not Receiving Emails from Zoom"
         title="Not Receiving Emails from Zoom"
-        className="inline-block border border-zoomchatblue rounded-3xl px-4 py-1.5 m-1 hover:bg-zoomchatblue hover:text-white hover:cursor-pointer"
-        // title="NOT IMPLEMENTED"
-        onClick={() => alert("NOT IMPLEMENTED")}
+        className="inline-block border border-zoomchatblue rounded-3xl px-4 py-1.5 m-1 hover:bg-zoomchatblue hover:text-white hover:cursor-not-allowed"
       >
         Not Receiving Emails from Zoom
       </button>
       <button
         aria-label="Zoom Account Does Not Exist"
         title="Zoom Account Does Not Exist"
-        className="inline-block border border-zoomchatblue rounded-3xl px-4 py-1.5 m-1 hover:bg-zoomchatblue hover:text-white hover:cursor-pointer"
-        //title="NOT IMPLEMENTED"
-        onClick={() => alert("NOT IMPLEMENTED")}
+        className="inline-block border border-zoomchatblue rounded-3xl px-4 py-1.5 m-1 hover:bg-zoomchatblue hover:text-white hover:cursor-not-allowed"
       >
         Zoom Account Does Not Exist
       </button>

@@ -9,7 +9,7 @@ const ResetPasswordDepth1Options = (props) => {
   };
 
   return (
-    <div className="text-zoomchatblue ml-11 font-extrabold text-[14px]">
+    <div className="text-zoomchatblue ml-12 font-extrabold text-[14px]">
       <button
         className="inline-block border border-zoomchatblue rounded-3xl px-4 py-1.5 m-1 hover:bg-zoomchatblue hover:text-white hover:cursor-pointer"
         onClick={() => handleResetPassword("Reset Password")}
@@ -17,14 +17,14 @@ const ResetPasswordDepth1Options = (props) => {
         Reset Password
       </button>
       <button
-        className="inline-block border border-zoomchatblue rounded-3xl px-4 py-1.5 m-1 hover:bg-zoomchatblue hover:text-white hover:cursor-pointer"
+        className="inline-block border border-zoomchatblue rounded-3xl px-4 py-1.5 m-1 hover:bg-zoomchatblue hover:text-white hover:cursor-not-allowed"
         title="NOT IMPLEMENTED"
         onClick={() => alert("NOT IMPLEMENTED")}
       >
         Issues after resetting my password
       </button>
       <button
-        className="inline-block border border-zoomchatblue rounded-3xl px-4 py-1.5 m-1 hover:bg-zoomchatblue hover:text-white hover:cursor-pointer"
+        className="inline-block border border-zoomchatblue rounded-3xl px-4 py-1.5 m-1 hover:bg-zoomchatblue hover:text-white hover:cursor-not-allowed"
         title="NOT IMPLEMENTED"
         onClick={() => alert("NOT IMPLEMENTED")}
       >
