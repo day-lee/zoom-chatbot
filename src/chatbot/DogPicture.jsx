@@ -1,7 +1,8 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 
 const DogPicture = () => {
   const [imageUrl, setImageUrl] = useState("");
+  const imageRef = useRef(null);
 
   useEffect(() => {
     fetch("https://dog.ceo/api/breeds/image/random")
@@ -11,10 +12,14 @@ const DogPicture = () => {
       });
   }, []);
 
+  useEffect(() => {
+    if (imageUrl && imageRef.current) {
+      imageRef.current.scrollIntoView({ behavior: "smooth" });
+    }
+  }, [imageUrl]);
+
   return (
-    <div>
-      <img src={imageUrl} atl="a dog" />
-    </div>
+    <div>{imageUrl && <img src={imageUrl} alt="a dog" ref={imageRef} />}</div>
   );
 };
 
