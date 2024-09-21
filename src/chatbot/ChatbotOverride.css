@@ -1,6 +1,6 @@
 .react-chatbot-kit-user-chat-message-container {
   display: flex;
-  margin: 22px 0;
+  margin: 45px 0 10px 0;
   justify-content: flex-end;
   position: relative;
 }
@@ -118,7 +118,7 @@
 .react-chatbot-kit-chat-container {
   position: relative;
   width: 428px;
-  height: 650px;
+  height: 610px;
   border-radius: 12px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
 }
@@ -176,6 +176,11 @@
 
 .react-chatbot-kit-chat-input::placeholder {
   color: #585858;
+}
+
+.react-chatbot-kit-chat-input:focus-visible {
+  outline: none;
+  box-shadow: none;
 }
 
 .react-chatbot-kit-chat-btn-send {
